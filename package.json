@@ -70,7 +70,7 @@
     "testEnvironment": "node"
   },
   "validate-branch-name": {
-    "pattern": "^(feature|test|bug)/.+$",
+    "pattern": "^(feature|test|bug).+$",
     "errorMsg": "Invalid Branch Name , Your Branch Must Start With (feature|test|bug)"
   }
 }
