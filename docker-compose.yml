@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  supnex_app:
+    container_name: supnex_app
+    restart: on-failure
+    ports:
+      - 3000:3000
+      - 8080:3000
+    build:
+      context: .
+    networks:
+      - supnex_network
+  supnex_db:
+    container_name: supnex_db
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    restart: on-failure
+    volumes:
+      - ../db:/data/db
+    networks:
+      - supnex_network
+networks:
+  supnex_network:
+    driver: bridge
