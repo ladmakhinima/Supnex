@@ -4,6 +4,10 @@ import { Model } from 'mongoose';
 export abstract class MongoRepository<T extends object>
   implements IRepository<T>
 {
+  updateMany(where: Partial<T>, data: Partial<T>) {
+    return this.getModel().updateMany(where, { $set: data }, { new: true });
+  }
+
   abstract getModel(): Model<T>;
 
   create(data: Partial<T>) {

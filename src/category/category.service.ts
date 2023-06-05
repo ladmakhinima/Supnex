@@ -5,10 +5,11 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { CategoryRepository } from './category.repository';
-import { CreateCategoryDTO, UpdateCategoryDTO } from './dtos';
-import { SendUpdatedCategoryEvent } from './decorators';
+import { SendUpdatedCategoryEvent } from './decorators/send-updated-category-event.decorator';
 import { EventService } from '../common/event/event.service';
 import { Category } from './category.entity';
+import { CreateCategoryDTO } from './dtos/create-category.dto';
+import { UpdateCategoryDTO } from './dtos/update-category.dto';
 
 @Injectable()
 export class CategoryService {
