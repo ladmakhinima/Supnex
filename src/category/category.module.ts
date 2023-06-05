@@ -15,5 +15,6 @@ import { EventModule } from '../common/event/event.module';
     { provide: 'DYNAMICModel', useValue: getModelToken(Category.name) },
   ],
   controllers: [CategoryController],
+  exports: [CategoryService]
 })
 export class CategoryModule {}
