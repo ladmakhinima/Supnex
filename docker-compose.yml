@@ -10,6 +10,8 @@ services:
       context: .
     networks:
       - supnex_network
+    environment:
+      - APP_CONFIG_DB=mongodb://supnex_db:27017/db
   supnex_db:
     container_name: supnex_db
     image: mongo:latest
